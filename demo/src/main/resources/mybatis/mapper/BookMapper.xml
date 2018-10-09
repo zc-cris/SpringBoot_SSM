@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.cris.dao.BookMapper">
+
+
+    <select id="getPriceByIsbn" resultType="java.math.BigDecimal">
+        select price
+        from sql_primary_study.book
+        where isbn = #{isbn}
+    </select>
+
+    <select id="getStockByIsbn" resultType="java.lang.Integer">
+        select stock
+        from sql_primary_study.book
+        where isbn = #{isbn}
+    </select>
+
+    <update id="updateStockBySubOne">
+        update sql_primary_study.book
+        set stock = stock - 1
+        where isbn = #{isbn}
+    </update>
+    <select id="getBookByIsbn" resultType="com.cris.entity.Book">
+        select
+            isbn,
+            stock,
+            price
+        from sql_primary_study.book
+        where isbn = #{isbn}
+    </select>
+
+
+</mapper>

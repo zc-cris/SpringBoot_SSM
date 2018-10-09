@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.cris.dao.UserMapper">
+
+
+    <select id="getMoneyById" resultType="java.math.BigDecimal">
+        select money
+        from sql_primary_study.user
+        where id = #{id}
+    </select>
+
+    <update id="updateMoneyByBookPrice">
+        update sql_primary_study.user
+        set money = money - #{price}
+        where id = #{id}
+    </update>
+</mapper>
