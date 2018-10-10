@@ -30,5 +30,13 @@ mybatis:
   configuration:
     map-underscore-to-camel-case: true
 
+mapper:
+  identity: MYSQL
+  # 因为新版本的改革，使用通用mapper插件需要在本地配置一个自定义的mapper接口
+  mappers: com.cris.mappers.MyMapper
+pagehelper:
+  reasonable: true  # 参数合理化，如果页数<0，默认查询第一页的数据
+
+
 
 

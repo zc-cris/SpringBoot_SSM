@@ -1,6 +1,5 @@
 package com.cris.dao;
 
-import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 
 import java.math.BigDecimal;
@@ -12,7 +11,6 @@ import java.math.BigDecimal;
  * @author zc-cris
  * @version 1.0
  **/
-@Mapper
 public interface UserMapper {
 
     /**
